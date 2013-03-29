@@ -21,16 +21,7 @@ Some working URLS:
 *   Musiquera:		http://s9.voscast.com:7584/
 *   Stereo Mass:	rtsp://4.30.20.151:1935/stereomass/mp3:stereomass
 
-4. Editing the Images
----------------------
-Go to res/ and edit the following folders
-*	drawable
-*	drawable-hdpi
-*	drawable-ldpi
-*	drawable-mdpi
-*	drawable-xhdpi
-
-4. Linking to Admob
+3. Linking to Admob
 -------------------
 ToDo
 
