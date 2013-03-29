@@ -45,7 +45,7 @@ import com.pheelicks.visualizer.renderer.LineRenderer;
 public class MainActivity extends Activity  {
 
 	private static final String TAG =            MainActivity.class.getSimpleName();
-	private static final Uri RADIO_STREAM_LINK = Uri.parse("http://giss.tv:8001/deejayonline.mp3");
+	private static final Uri RADIO_STREAM_LINK = Uri.parse("http://s9.voscast.com:7584/");
 
 	private int             mVolumeValue;
 	private ToggleButton    mVolumeSign;
