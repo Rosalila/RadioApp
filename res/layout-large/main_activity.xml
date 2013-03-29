@@ -1,0 +1,104 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    xmlns:custom="http://schemas.android.com/apk/res/oscar.presidente.radioluz"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:paddingTop="16dp"
+    tools:context=".MainActivity" >
+
+    <RelativeLayout
+        android:id="@+id/media_controller_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/buttons_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp">
+
+            <Button
+                android:id="@+id/stop_button"
+                android:layout_width="@dimen/button_width_large"
+                android:layout_height="@dimen/button_height_large"
+                android:background="@drawable/stop_button"
+                android:enabled="true"
+                android:onClick="onStopButtonPressed" />
+
+            <Button
+                android:id="@+id/play_button"
+                android:layout_width="@dimen/button_width_large"
+                android:layout_height="@dimen/button_height_large"
+                android:background="@drawable/play_button"
+                android:onClick="onPlayButtonPressed"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/volume_gauge"
+            style="@style/SeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/volume_sign"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
+
+        <ToggleButton
+            android:id="@+id/volume_sign"
+            android:layout_width="@dimen/button_width_large"
+            android:layout_height="@dimen/button_height_large"
+            android:layout_centerVertical="true"
+            android:textOff=""
+            android:textOn=""
+            android:layout_toRightOf="@+id/buttons_layout"
+            android:paddingLeft="20dp"
+            android:background="@drawable/volume_selector"
+            android:checked="true" />
+    </RelativeLayout>
+
+    <com.pheelicks.visualizer.VisualizerView
+        android:id="@+id/music_visualizerView"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:layout_above="@+id/digital_clock"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:paddingTop="70dp" />
+
+    <com.google.ads.AdView
+        android:id="@+id/ad_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="a15152a1a37d481"
+        ads:loadOnCreate="true"
+        ads:testDevices="KJBT-MJSD-PSLJ-C" />
+
+    <oscar.presidente.radioluz.DigitalClock
+        android:id="@+id/digital_clock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ad_view"
+        android:layout_alignParentLeft="true"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:paddingTop="20dp"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        custom:dateTextFont="Marcellus.ttf"
+        custom:dateTextSize="50"
+        custom:timeTextFont="Marcellus.ttf"
+        custom:timeTextSize="120" />
+
+</RelativeLayout>
